@@ -4,27 +4,28 @@ on:
   push:
     branches:
       - main
+      
 jobs:
   render_my_files:
        runs-on: ubuntu-latest
        
        
- permissions:
-    contents: write 
+permissions:
+ contents: write 
     
- steps: 
-  - name: checkout repository
-     uses: actions/checkout@v6
+steps: 
+- name: checkout repository
+  uses: actions/checkout@v6
      
-  - name: Install Quarto CLI  
-    uses: quarto-dev/quarto-actions/setup@v2
-    with:
-        version: lATEST
+ - name: Install Quarto CLI  
+uses: quarto-dev/quarto-actions/setup@v2
+with:
+    version: lATEST
         
         
 - name: Install R packages
-  runs: |
-     Rscript -e "inatall.packages('renv', repos = 'https://packagemanager.posit.co/cran/latest' )"
+runs: |
+     Rscript -e "install.packages('renv', repos = 'https://packagemanager.posit.co/cran/latest' )"
      Rscript -e "renv::restore(repos = 'https://packagemanager.posit.co/cran/latest' )"
      
   - name: Rerender Quarto file
@@ -38,7 +39,6 @@ jobs:
     git add README.md
     git commit -m "Updaate README.md from readme.qmd"
     git push
-    
   env: 
     GITHUB_TOKEN: $({ secrets.GITHUB_TOKEN })
     

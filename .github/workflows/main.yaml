@@ -18,8 +18,7 @@ jobs:
 
       - name: Install Quarto CLI
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: latest
+   
 
       - name: Install R packages
         run: |

@@ -1,8 +1,9 @@
 ---
 
 format:
-   html: default
-   gfm: default
+   - html: default
+   - gfm: default
+   
 ---
 
 # Github Actions Test

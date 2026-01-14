@@ -42,3 +42,8 @@ jobs:
          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          
+      - name: publish to Netlify
+        run: |
+          quarto publish README.qmd

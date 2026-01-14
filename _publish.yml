@@ -1,0 +1,4 @@
+- source: README.qmd
+  netlify:
+    - id: 1b665276-0459-4d00-8abd-7af96acc9d0b
+      url: https://marvelous-croissant-a34ff5.netlify.app

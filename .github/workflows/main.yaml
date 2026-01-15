@@ -47,3 +47,5 @@ jobs:
       - name: publish to Netlify
         run: |
           quarto publish README.qmd
+        env:
+           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLYFY_AUTH_TOKEN }}
